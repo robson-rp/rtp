@@ -9,7 +9,6 @@ Desenvolvedor, poeta ocasional e eterno curioso. Este é meu espaço digital min
 
 ## O que encontra aqui
 
-- **[← Voltar ao Início](/)**: Página principal com últimas publicações
 - **[Blog](/category/blog.html)**: Reflexões pessoais, poesia e pensamentos sobre o mundo digital
 - **[Lab](/category/lab.html)**: Tutoriais técnicos, experimentos com código e aprendizados
 

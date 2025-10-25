@@ -23,7 +23,6 @@ MENUITEMS = (
     ('Blog', '/category/blog.html'),
     ('Lab', '/category/lab.html'),
     ('Sobre', '/about/'),
-    ('Categorias', '/categories.html'),
 )
 
 # Configuração para INDEX como página inicial

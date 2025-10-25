@@ -46,6 +46,16 @@ DEFAULT_PAGINATION = 10
 THEME = 'theme'
 DISPLAY_PAGES_ON_MENU = False
 
+# Syntax highlighting
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight', 'use_pygments': False},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
+
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 

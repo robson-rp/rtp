@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }}{% if SITESUBTITLE %} - {{ SITESUBTITLE }}{% endif %}{% endblock %}
+
+{% block content %}
+    <div class="home-intro">
+        <h1 class="home-title">Meu canto da internet</h1>
+        <p class="home-description">
+            Bem-vindo ao diário de {{ AUTHOR }}. Escrevo sobre minha jornada através de programação, design e arte generativa.
+        </p>
+    </div>
+    
+    {% if articles %}
+        {% set articles_by_year = {} %}
+        {% for article in articles %}
+            {% set year = article.date.strftime('%Y') %}
+            {% if year not in articles_by_year %}
+                {% set _ = articles_by_year.update({year: []}) %}
+            {% endif %}
+            {% set _ = articles_by_year[year].append(article) %}
+        {% endfor %}
+        
+        {% for year in articles_by_year.keys()|sort(reverse=True) %}
+            <section class="year-section">
+                <h2 class="year-title">{{ year }}</h2>
+                
+                <div class="articles-list">
+                    {% for article in articles_by_year[year]|sort(attribute='date', reverse=True) %}
+                        <article class="article-row">
+                            <div class="article-content">
+                                <h3 class="article-title">
+                                    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                                </h3>
+                            </div>
+                            
+                            <div class="article-meta">
+                                <span class="article-category">{{ article.category|title }}</span>
+                                <span class="article-arrow">↗</span>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endfor %}
+    {% else %}
+        <div class="empty-message">
+            <p>Ainda não há artigos publicados. Volte em breve para ver as primeiras reflexões!</p>
+        </div>
+    {% endif %}
+{% endblock %}

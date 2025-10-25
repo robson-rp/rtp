@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+    <div class="category-header">
+        <h1 class="category-title">{{ category|title }}</h1>
+        <p class="category-description">{{ articles|length }} artigo{{ 's' if articles|length != 1 else '' }} nesta categoria</p>
+    </div>
+    
+    {% if articles %}
+        {% set articles_by_year = {} %}
+        {% for article in articles %}
+            {% set year = article.date.strftime('%Y') %}
+            {% if year not in articles_by_year %}
+                {% set _ = articles_by_year.update({year: []}) %}
+            {% endif %}
+            {% set _ = articles_by_year[year].append(article) %}
+        {% endfor %}
+        
+        {% for year in articles_by_year.keys()|sort(reverse=True) %}
+            <section class="year-section">
+                <h2 class="year-title">{{ year }}</h2>
+                
+                <div class="articles-list">
+                    {% for article in articles_by_year[year]|sort(attribute='date', reverse=True) %}
+                        <article class="article-row">
+                            <div class="article-content">
+                                <h3 class="article-title">
+                                    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                                </h3>
+                            </div>
+                            
+                            <div class="article-meta">
+                                <span class="article-category">{{ article.category|title }}</span>
+                                <span class="article-arrow">↗</span>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endfor %}
+    {% else %}
+        <div class="empty-message">
+            <p>Ainda não há artigos nesta categoria.</p>
+        </div>
+    {% endif %}
+{% endblock %}

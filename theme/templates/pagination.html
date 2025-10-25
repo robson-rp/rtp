@@ -1,0 +1,17 @@
+{% if DEFAULT_PAGINATION and articles_paginator and articles_paginator.num_pages > 1 %}
+    <div class="pagination">
+        {% if articles_page and articles_page.has_previous() %}
+            <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&larr; Anterior</a>
+        {% endif %}
+        
+        {% if articles_page %}
+            <span class="current">
+                Página {{ articles_page.number }} de {{ articles_paginator.num_pages }}
+            </span>
+        {% endif %}
+        
+        {% if articles_page and articles_page.has_next() %}
+            <a href="{{ SITEURL }}/{{ articles_next_page.url }}">Próxima &rarr;</a>
+        {% endif %}
+    </div>
+{% endif %}

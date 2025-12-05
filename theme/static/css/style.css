@@ -324,7 +324,7 @@ pre[class*="language-"] code {
     color: inherit !important;
 }
 
-/* Cores personalizadas para syntax highlighting */
+/* Cores personalizadas para syntax highlighting - Light Mode */
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -378,6 +378,62 @@ pre[class*="language-"] code {
 .token.important,
 .token.variable {
     color: #e36209 !important;
+}
+
+/* Syntax highlighting - Dark Mode */
+[data-theme="dark"] .token.comment,
+[data-theme="dark"] .token.prolog,
+[data-theme="dark"] .token.doctype,
+[data-theme="dark"] .token.cdata {
+    color: #8b949e !important;
+}
+
+[data-theme="dark"] .token.punctuation {
+    color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .token.property,
+[data-theme="dark"] .token.tag,
+[data-theme="dark"] .token.boolean,
+[data-theme="dark"] .token.number,
+[data-theme="dark"] .token.constant,
+[data-theme="dark"] .token.symbol,
+[data-theme="dark"] .token.deleted {
+    color: #79c0ff !important;
+}
+
+[data-theme="dark"] .token.selector,
+[data-theme="dark"] .token.attr-name,
+[data-theme="dark"] .token.string,
+[data-theme="dark"] .token.char,
+[data-theme="dark"] .token.builtin,
+[data-theme="dark"] .token.inserted {
+    color: #a5d6ff !important;
+}
+
+[data-theme="dark"] .token.operator,
+[data-theme="dark"] .token.entity,
+[data-theme="dark"] .token.url,
+[data-theme="dark"] .language-css .token.string,
+[data-theme="dark"] .style .token.string {
+    color: #ff7b72 !important;
+}
+
+[data-theme="dark"] .token.atrule,
+[data-theme="dark"] .token.attr-value,
+[data-theme="dark"] .token.keyword {
+    color: #ff7b72 !important;
+}
+
+[data-theme="dark"] .token.function,
+[data-theme="dark"] .token.class-name {
+    color: #d2a8ff !important;
+}
+
+[data-theme="dark"] .token.regex,
+[data-theme="dark"] .token.important,
+[data-theme="dark"] .token.variable {
+    color: #ffa657 !important;
 }
 
 /* Fallback para blocos de código sem classe específica */
@@ -814,5 +870,174 @@ li {
     .single-article .article-content {
         font-size: 1rem;
         line-height: 1.7;
+    }
+}
+
+/* === APHORISMS === */
+.aphorism-container {
+    margin-bottom: 1.5rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aphorism-text {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: var(--meta-color);
+    font-size: 0.95rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* === ECO CHAT WIDGET === */
+.eco-chat {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 320px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.eco-chat.closed {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    background: var(--bg-color);
+    border-color: var(--primary-accent);
+}
+
+.eco-chat.closed .chat-body {
+    display: none;
+}
+
+.eco-chat.closed .chat-title {
+    display: none;
+}
+
+.eco-chat.closed .chat-header {
+    padding: 0;
+    height: 100%;
+    justify-content: center;
+    background: transparent;
+    border: none;
+}
+
+.chat-header {
+    padding: 1rem;
+    background: var(--tag-bg);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--heading-color);
+}
+
+.chat-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--meta-color);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-toggle:hover {
+    color: var(--primary-accent);
+}
+
+.chat-body {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.message {
+    max-width: 85%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background: var(--tag-bg);
+    color: var(--text-color);
+    border-bottom-left-radius: 2px;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: var(--primary-accent);
+    color: #fff; /* Sempre branco para contraste com a cor de destaque */
+    border-bottom-right-radius: 2px;
+}
+
+.chat-options {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background: var(--bg-color);
+}
+
+.chat-option-btn {
+    background: transparent;
+    border: 1px solid var(--primary-accent);
+    color: var(--primary-accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chat-option-btn:hover {
+    background: var(--primary-accent);
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .eco-chat {
+        right: 1rem;
+        bottom: 1rem;
+        width: calc(100% - 2rem);
+    }
+    
+    .eco-chat.closed {
+        width: 50px;
+        right: 1rem;
     }
 }

@@ -46,10 +46,15 @@ DEFAULT_PAGINATION = 10
 THEME = 'theme'
 DISPLAY_PAGES_ON_MENU = False
 
-# Syntax highlighting
+# Syntax highlighting - usando fenced_code para gerar classes compatíveis com Prism.js
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight', 'use_pygments': False},
+        'markdown.extensions.fenced_code': {},
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight',
+            'use_pygments': False,
+            'guess_lang': False,
+        },
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
     },
@@ -58,12 +63,3 @@ MARKDOWN = {
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
-
-MARKDOWN = {
-    'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight'},
-        'markdown.extensions.extra': {},
-        'markdown.extensions.meta': {},
-    },
-    'output_format': 'html5',
-}

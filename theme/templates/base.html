@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
     
     <!-- Prism.js CSS para syntax highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
     
     {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
@@ -63,6 +64,7 @@
 
     <footer class="site-footer">
         <div class="container">
+            <div id="aphorism-container" class="aphorism-container"></div>
             <p>&copy; 2025 {{ AUTHOR }}. Construído com <a href="https://getpelican.com/">Pelican</a>.</p>
         </div>
     </footer>
@@ -97,19 +99,17 @@
                 localStorage.setItem('theme', 'light');
                 sunIcon.style.display = 'block';
                 moonIcon.style.display = 'none';
-                
-                // Disparar evento para atualizar partículas
-                // window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: 'light' } }));
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'block';
-                
-                // Disparar evento para atualizar partículas
-                // window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: 'dark' } }));
             }
         });
     </script>
+
+    <!-- Scripts Personalizados -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/aphorisms.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/chat.js"></script>
 </body>
 </html>

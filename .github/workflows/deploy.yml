@@ -2,9 +2,9 @@ name: Deploy Pelican site to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ prod ]
   pull_request:
-    branches: [ main ]
+    branches: [ prod ]
 
 permissions:
   contents: read

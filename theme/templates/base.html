@@ -42,7 +42,7 @@
                 <nav class="main-nav">
                     <ul class="nav-list">
                         {% for title, link in MENUITEMS %}
-                            <li><a href="{{ link }}" class="nav-link">{{ title }}</a></li>
+                            <li><a href="{{ SITEURL }}/{{ link }}" class="nav-link">{{ title }}</a></li>
                         {% endfor %}
                         <li>
                             <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">

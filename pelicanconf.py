@@ -21,7 +21,6 @@ DISPLAY_CATEGORIES_ON_MENU = True
 # Menu principal
 MENUITEMS = (
     ('Blog', '/category/blog.html'),
-    ('Lab', '/category/lab.html'),
     ('Sobre', '/about/'),
 )
 

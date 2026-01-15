@@ -5,25 +5,29 @@ Slug: about
 
 Olá, sou **Robson Paulo** 🇦🇴
 
-Desenvolvedor, poeta ocasional e eterno curioso. Este é meu espaço digital minimalista onde compartilho reflexões sobre tecnologia, fragmentos poéticos e experimentos de código.
+Desenvolvedor angolano focado em criar soluções digitais para humanos. Este é meu espaço onde compartilho o que penso sobre tecnologia e experimentos de código.
+
+## O que estou fazendo agora
+
+Atualmente trabalho no **[DeepCoffe](https://deepcoffee-a1434.web.app)**: Work deep. Stay light. - Um app de produtividade com música lofi e gerenciamento de tarefas.
 
 ## O que encontra aqui
 
-- **[Blog](/category/blog.html)**: Reflexões pessoais, poesia e pensamentos sobre o mundo digital
-- **[Lab](/category/lab.html)**: Tutoriais técnicos, experimentos com código e aprendizados
+- **[Blog](/category/blog.html)**: Reflexões sobre desenvolvimento e tecnologia
+- **[Lab](/category/lab.html)**: Experimentos e aprendizados
 
 ## Contacto
 
-- Email: [robson@rtp.ao](mailto:robson@rtp.ao)
-- GitHub: [@robsonpaulo](https://github.com/robsonpaulo)
-- LinkedIn: [Robson Paulo](https://linkedin.com/in/robsonpaulo)
+- Email: [robson.paulo6060@gmail.com](mailto:robson.paulo6060@gmail.com)
+- GitHub: [@robsonpaulo](https://github.com/robson-rp)
+- LinkedIn: [Robson Paulo](https://www.linkedin.com/in/robson-paulo-8978a7220/)
 
 ## Sobre este site
 
 Construído com ❤️ usando:
-- **[Pelican](https://getpelican.com/)** - Gerador de sites estáticos
-- **Python & Markdown** - Para simplicidade e eficiência
-- **CSS Vanilla** - Design minimalista e responsivo
+- **[Pelican](https://getpelican.com/)**
+- **Python & Markdown**
+- **CSS Vanilla**
 
 ---
 

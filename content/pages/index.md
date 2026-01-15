@@ -4,12 +4,20 @@ Template: index
 
 # rtp
 
-Um espaço minimalista para reflexões, código e experimentos.
+```
+$ whoami
+robson-paulo
 
-## Últimas publicações
+$ pwd
+/angola/luanda/digital-space
 
-Aqui você encontra pensamentos sobre tecnologia, poesia urbana e experimentos de código. Navegue pelo **[blog](/category/blog.html)** para reflexões pessoais ou pelo **[lab](/category/lab.html)** para conteúdo técnico.
+$ ls -la thoughts/
+drwxr-xr-x  blog/     # onde as ideias ganham forma
+drwxr-xr-x  lab/      # onde o código ganha vida
+```
+
+Navegar: **[blog](/category/blog.html)** • **[lab](/category/lab.html)**
 
 ---
 
-*"O código é poesia que as máquinas entendem, a poesia é código que a alma decifra."*
+*building things that matter*

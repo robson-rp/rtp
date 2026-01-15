@@ -18,11 +18,10 @@ PAGE_SAVE_AS = '{slug}/index.html'
 USE_FOLDER_AS_CATEGORY = True
 DISPLAY_CATEGORIES_ON_MENU = True
 
-# Menu principal (sem barra inicial para funcionar com SITEURL)
+# Menu principal
 MENUITEMS = (
-    ('Blog', 'category/blog.html'),
-    ('Lab', 'category/lab.html'),
-    ('Sobre', 'about/'),
+    ('Blog', '/category/blog.html'),
+    ('Sobre', '/about/'),
 )
 
 # Configuração para INDEX como página inicial
